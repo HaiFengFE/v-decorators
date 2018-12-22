@@ -44,7 +44,7 @@
     ```
       methods: {
         async request() { try { await http(...) } catch(e) { ... } },
-        clickHandle() { request().carch(...) }
+        clickHandle() { request().catch(...) }
       }
     ```
     after use:
@@ -101,21 +101,21 @@
     bind data to vue instance, **but it's not responsive**. it can reduce the volume of your data function, usually used to bind static data used in vue templates. 
     reduce response data can effectively improve perf.
 
-      ex:
-      ```
-      const MAX = '100', datePipe = (date) => { ... }
-      // ...
-      // in your component
+    ex:
+    ```
+    const MAX = '100', datePipe = (date) => { ... }
+    // ...
+    // in your component
 
-      <div>{{ max }} {{datePipe('2018/12/01')}}</div>
+    <div>{{ max }} {{datePipe('2018/12/01')}}</div>
 
-      @Decorators.Shortcut({
-        max: MAX, datePipe: datePipe,
-      })
-      data: () => ({
-        your responsive datas...
-      })
-      ```
+    @Decorators.Shortcut({
+    max: MAX, datePipe: datePipe,
+    })
+    data: () => ({
+    your responsive datas...
+    })
+    ```
 
 <br/>
 
