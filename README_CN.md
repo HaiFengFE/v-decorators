@@ -44,7 +44,7 @@
     ```
       methods: {
         async request() { try { await http(...) } catch(e) { ... } },
-        clickHandle() { request().carch(...) }
+        clickHandle() { request().catch(...) }
       }
     ```
     使用后：
@@ -101,21 +101,21 @@
     绑定一组数据到 vue 组件的实例上, **这不是响应式的数据**。这可以有效减少你的组件 data 对象的体积，通常用于绑定静态数据或函数。
     减少响应式数据可以有效提高组件的性能。
 
-      示例：
-      ```
-      const MAX = '100', datePipe = (date) => { ... }
-      // ...
-      // 在组件中使用 Shortcut 绑定数据
+    示例：
+    ```
+    const MAX = '100', datePipe = (date) => { ... }
+    // ...
+    // 在组件中使用 Shortcut 绑定数据
 
-      <div>{{ max }} {{datePipe('2018/12/01')}}</div>
+    <div>{{ max }} {{datePipe('2018/12/01')}}</div>
 
-      @Decorators.Shortcut({
-        max: MAX, datePipe: datePipe,
-      })
-      data: () => ({
-        your responsive datas...
-      })
-      ```
+    @Decorators.Shortcut({
+    max: MAX, datePipe: datePipe,
+    })
+    data: () => ({
+    your responsive datas...
+    })
+    ```
 
 <br/>
 
